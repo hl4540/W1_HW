@@ -14,12 +14,15 @@ public class GameManager : MonoBehaviour
     //make the best score a public static variable so that ...
     public static int nPoop;
     //make the number of poop a public static so that ...
-    private bool isMenu = true;
+    public static bool isMenu = true;
     //set a boolean variable to check if the Menu scene is loaded
     public static bool isLevel1 = false; //set a boolean to check if the level1 scene is loaded
     //private bool isLevel2 = false;
     private bool isGameOver = false;
     //set a boolean to check if the GameOver scene is loaded
+
+    public AudioSource music;
+    //set a public variable to assing a music
 
     
 
@@ -47,8 +50,27 @@ public class GameManager : MonoBehaviour
     }
     //---------------------------------
 
+    void Start()
+    {
+        music.volume = PlayerPrefs.GetFloat("MusicVolume");
+        //set the volume of the music as the value that set in the PlayerPrefs
+        //Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
+    }
+
     void Update()
     {
+
+        if (Input.GetKeyDown("space") && (isMenu == true || isGameOver == true))
+        //when Menu Scene or GameOver Scene is loaded, and you press the spacebar
+        {
+            Destroy(gameObject);
+            //destroy the GameManager
+            SceneManager.LoadScene("Preference");
+            //Load Preference Scene
+            isMenu = false;
+            //set isMenu as false cuz it's gonna be Preference Scene
+            
+        }
 
         if (Input.GetMouseButton(0) && (isMenu == true || isGameOver == true)) 
         //when Menu Scene or GameOver Scene is loaded, and you press the left mouse button

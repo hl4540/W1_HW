@@ -1030,9 +1030,10 @@ MonoBehaviour:
   - {fileID: 585825524807175148, guid: cc84043de2234f741b238e3e727f292b, type: 3}
   - {fileID: 5383108844483431109, guid: 16f6b5508172fb444a7b4560d8847c18, type: 3}
   - {fileID: 5383108844483431109, guid: 16f6b5508172fb444a7b4560d8847c18, type: 3}
+  - {fileID: 5383108844483431109, guid: 16f6b5508172fb444a7b4560d8847c18, type: 3}
   secondSpawn: 1
-  minX: -7
-  maxX: 7
+  minX: -5.5
+  maxX: 5.5
 --- !u!4 &1863848382
 Transform:
   m_ObjectHideFlags: 0
